@@ -1,5 +1,6 @@
 package algorithm.sort;
 
+/*heapInsert和heaptify是堆排序中最重要的两个操作*/
 public class HeapSort {
     public static void main(String[] args) {
         int []arr=new int[]{2,5,12,0,-3,45,233,1,8};
