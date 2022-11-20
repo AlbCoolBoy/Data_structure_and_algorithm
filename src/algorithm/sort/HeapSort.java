@@ -52,7 +52,7 @@ public class HeapSort {
     private static void heapInsert(int[] arr, int index) {
         while(arr[index]>arr[(index-1)/2]){
             swap(arr,index,(index-1)/2);
-            index=(index-1)/2;  //向上进行大根堆化
+            index=(index-1)/2;  //向上进行大根堆化,交换完之后向上跑
         }
     }
 
