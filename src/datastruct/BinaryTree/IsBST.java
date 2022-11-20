@@ -14,60 +14,75 @@ public class IsBST {
         }
     }
 
-    public static int preValue=Integer.MIN_VALUE;
-    public static boolean isBST(Node head){
-        if(head==null) return true;
-        boolean isLeftBST=isBST(head.left);
-        if(isLeftBST==false){
+    public static int preValue = Integer.MIN_VALUE;
+
+    public static boolean isBST(Node head) {
+        if (head == null) return true;
+        boolean isLeftBST = isBST(head.left);
+        if (isLeftBST == false) {
             return false;
         }
-        if(head.value<preValue){
+        if (head.value < preValue) {
             return false;
-        }else{
+        } else {
             preValue = head.value;
         }
         return isBST(head.right);
     }
 
     /*使用递归进行解决*/
-    /*需要获取，左子树是否是BST，右子树是否是BST，同时左子树的最大值是否小于右子树的最小值*/
-    public static class ReturnData{
-        public boolean isBST;
-        public int min;
-        public int max;
-        public ReturnData(boolean isBST, int min, int max){
-            isBST=isBST;
-            min=min;
-            max=max;
+    /*需要获取，左子树是否是BST，右子树是否是BST，同时左子树的最大值是否小于右子if(树的最小值*/
+    public static boolean isBST2(Node head){
+        if(head==null) {
+            return true;
         }
+        return process(head).isBST;
     }
+    public static class Info {
+       public boolean isBST;
+       public int max;
+       public int min;
 
-    public static ReturnData process(Node x){
+       public Info(boolean isBST, int max, int min) {
+           isBST = isBST;
+           max=max;
+           min=min;
+       }
+    }
+    public static Info process(Node x){
         if(x==null){
             return null;
         }
-        ReturnData leftData=process(x.left);
-        ReturnData rightData=process(x.right);
-
-        int min=x.value;
-        int max=x.value;;
-
-        if(leftData!=null){
-            min=Math.min(min, leftData.min);
-            max=Math.max(max, leftData.max);
+        Info leftInfo=process(x.left);
+        Info rightInfo=process(x.right);
+        int max=x.value;
+        if(leftInfo!=null){
+            max=Math.max(max, leftInfo.max);
         }
-        if(rightData!=null){
-            min=Math.min(min, rightData.min);
-            max= Math.max(max,rightData.max);
+        if(rightInfo!=null){
+            max= Math.max(max,rightInfo.max);
+        }
+        int min=x.value;
+        if (leftInfo != null) {
+            min=Math.min(min, leftInfo.min);
+        }
+        if(rightInfo!=null){
+            min=Math.min(min, rightInfo.min);
         }
         boolean isBST=true;
-        if(leftData!=null&&(!leftData.isBST||leftData.max>=x.value)){
+        if(leftInfo!=null&&!leftInfo.isBST){
             isBST=false;
         }
-        if (rightData!=null&&(!rightData.isBST||rightData.min<=x.value)){
+        if(rightInfo!=null&&!rightInfo.isBST){
             isBST=false;
         }
-        return new ReturnData(isBST,min,max);
+        if(leftInfo!=null&leftInfo.max>=x.value){
+            isBST=false;
+        }
+        if(rightInfo!=null&&rightInfo.min<=x.value){
+            isBST=false;
+        }
+        return new Info(isBST,max,min);
     }
 
 
