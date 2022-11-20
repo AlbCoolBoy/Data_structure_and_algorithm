@@ -2,7 +2,7 @@ package datastruct.BinaryTree;
 
 import java.util.Stack;
 
-import static com.sun.glass.ui.EventLoop.stack;
+
 
 public class TreeNode<V> {
     V value;
