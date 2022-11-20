@@ -3,7 +3,7 @@ package datastruct.BinaryTree;
 import java.util.Stack;
 
 
-
+/*主要写了三种遍历的非递归版本，递归版本太简单了*/
 public class TreeNode<V> {
     V value;
     TreeNode right;
