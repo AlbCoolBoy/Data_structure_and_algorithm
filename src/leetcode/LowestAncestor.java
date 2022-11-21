@@ -61,6 +61,5 @@ public class LowestAncestor {
             return head;
         }
         return left!=null?left:right;
-
     }
 }
