@@ -38,8 +38,10 @@ public class IsBST {
         }
         return process(head).isBST;
     }
+
+    /*用于收集信息d*/
     public static class Info {
-       public boolean isBST;
+      public boolean isBST;
        public int max;
        public int min;
 
