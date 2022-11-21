@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.LinkedList;
 
 
 public class FindFirstIntersectNode {

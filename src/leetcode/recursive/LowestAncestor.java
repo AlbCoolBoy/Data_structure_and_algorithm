@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.recursive;
 
 import java.util.HashMap;
 import java.util.HashSet;

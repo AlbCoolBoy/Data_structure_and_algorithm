@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.interview;
 
 /*微软的折纸问题*/
 public class PaperFlodiing {
