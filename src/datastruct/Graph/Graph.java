@@ -10,7 +10,6 @@ public class Graph {
     public Graph(){
         nodes=new HashMap<>();
         edges=new HashSet<>();
-
     }
     //给一个例子：
     //如果给定的图的结构是一个矩阵，每一行的三个元素分别代表 边的起始点、边指向的终端节点、边的权重
