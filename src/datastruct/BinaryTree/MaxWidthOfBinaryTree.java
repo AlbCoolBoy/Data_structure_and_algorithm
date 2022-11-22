@@ -35,7 +35,7 @@ public class MaxWidthOfBinaryTree {
             }
         }
     }
-/*题目描述：返回二叉树的最大深度*/
+/*题目描述：返回二叉树的最大宽度*/
     public static int maxWidthUseMap(Node head) {
         if (head == null) {
             return 0;
