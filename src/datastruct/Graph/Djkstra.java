@@ -6,7 +6,7 @@ import java.util.Map;
 
 /*从指定出发点到后续每个出发点的最短路径
 其中可以有权值路径为负数的边，但是不能有权值路径和为负数的有向环
-* P7 2:01:10*/
+* P9 2:01:10*/
 public class Djkstra {
     public static HashMap<Node, Integer> dijkstra(Node from) {
         HashMap<Node, Integer> distanceMap = new HashMap<Node, Integer>();  //起始点到Node的距离

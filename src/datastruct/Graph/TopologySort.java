@@ -7,8 +7,8 @@ import java.util.*;
 * 这时候就要确定包或者是各个工程的启动顺序，只有各个依赖工程的启动顺序正确，才能成功启动工程*/
 public class TopologySort {
     public static List<Node> sortedTopological(Graph graph){
-        HashMap<Node,Integer> inMap=new HashMap<Node,Integer>();
-        Queue<Node> zeroInQueue=new LinkedList<Node>();
+        HashMap<Node,Integer> inMap=new HashMap<Node,Integer>();    //记录每个节点的入度的表
+        Queue<Node> zeroInQueue=new LinkedList<Node>();             //将入度为零的节点放进这个队列中
         for (Node node : graph.nodes.values()) {
             inMap.put(node,node.in);
             if(node.in==0){
