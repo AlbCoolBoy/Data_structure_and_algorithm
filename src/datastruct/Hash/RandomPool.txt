@@ -1,0 +1,5 @@
+设计random pool结构，满足以下三种功能：
+1、insert(key) 将某个key添加到该结构中，做到不重复加入
+2、delete(key) 将原本再结构中的某个key移除
+3、getRandom() 等概率随机给返回结构中的任何一个key
+其中三个方法的时间复杂度都是O(1)
