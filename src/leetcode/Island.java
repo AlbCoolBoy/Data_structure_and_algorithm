@@ -29,6 +29,8 @@ public class Island {
         infect(m, i, j - 1, N, M);
     }
 
+    //进阶方法，使用并查集的方法解决岛问题
+
     public static void main(String[] args) {
         int[][] m={
                 {0,1,0,0,0,0,0,0},
